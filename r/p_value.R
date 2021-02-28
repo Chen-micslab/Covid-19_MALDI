@@ -1,16 +1,16 @@
-data = read.csv("E:/r work/2019 cov wan/data/RÓïÑÔ ·å¶ÔÆë¹ıÂËºóÊı¾İ/0-1000 new/0-1000 new detected peaks fill gap top97 ×ªÖÃ.CSV",
+data = read.csv("E:/r work/2019 cov wan/data/Rè¯­è¨€ å³°å¯¹é½è¿‡æ»¤åæ•°æ®/0-1000 new/0-1000 new detected peaks fill gap top97 è½¬ç½®.CSV",
                 header = F,row.names = 1)
 data1 = data
-#ÌáÈ¡Êı¾İµÚÒ»ĞĞ´æÈëa1£¬¼´Îª·ÖÀàÇé¿ö
+#æå–æ•°æ®ç¬¬ä¸€è¡Œå­˜å…¥a1ï¼Œå³ä¸ºåˆ†ç±»æƒ…å†µ
 a = data[1,] 
 a1 = character()
 for (i in 1:length(a)){
   a1 = c(a1,a[1,i])
 }
-#ÌáÈ¡ĞĞÃû´æÈëb1£¬¼´ÎªfeatureµÄÖÖÀà
+#æå–è¡Œåå­˜å…¥b1ï¼Œå³ä¸ºfeatureçš„ç§ç±»
 b1 = rownames(data)
 
-#ÇócaseÑù±¾µÄÊıÁ¿
+#æ±‚caseæ ·æœ¬çš„æ•°é‡
 num1 = 0
 for(i in 1:length(a1)){
   if (a[i]==a[1]){
@@ -28,11 +28,11 @@ for (i in 2:length(b1)){
 }
 p_adjust = p.adjust(P_w,method = 'BH')
 x = cbind(b1[2:length(b1)],P_w,p_adjust)
-write.csv(x,'E:/r work/2019 cov wan/data/RÓïÑÔ ·å¶ÔÆë¹ıÂËºóÊı¾İ/0-1000 new/0-1000 new detected peaks fill gap adjust p.CSV')
+write.csv(x,'E:/r work/2019 cov wan/data/Rè¯­è¨€ å³°å¯¹é½è¿‡æ»¤åæ•°æ®/0-1000 new/0-1000 new detected peaks fill gap adjust p.CSV')
 
 
-#ÕıÌ¬ĞÔ·Ö²¼¼ìÑé
-data = read.csv("E:/r work/2019 cov wan/data/RÓïÑÔ ·å¶ÔÆë¹ıÂËºóÊı¾İ/0-1000 new/choose feature/Top 10 ×ªÖÃ.CSV",
+#æ­£æ€æ€§åˆ†å¸ƒæ£€éªŒ
+data = read.csv("E:/r work/2019 cov wan/data/Rè¯­è¨€ å³°å¯¹é½è¿‡æ»¤åæ•°æ®/0-1000 new/choose feature/Top 10 è½¬ç½®.CSV",
                 header = F,row.names = 1)
 
 ZT = numeric()
@@ -55,8 +55,8 @@ data3 = data.frame(ZT)
 
 
 
-#####ÓÃ3s·½·¨È¥³ıÒì³£Öµ
-data = read.csv("E:/r work/2019 cov wan/data/RÓïÑÔ ·å¶ÔÆë¹ıÂËºóÊı¾İ/0-1000 new/choose feature/Top 10 ×ªÖÃ.CSV",
+#####ç”¨3sæ–¹æ³•å»é™¤å¼‚å¸¸å€¼
+data = read.csv("E:/r work/2019 cov wan/data/Rè¯­è¨€ å³°å¯¹é½è¿‡æ»¤åæ•°æ®/0-1000 new/choose feature/Top 10 è½¬ç½®.CSV",
                 header = F,row.names = 1)
 
 #calculate the number of case samples
@@ -109,6 +109,6 @@ print(length(y_new_control))
 }
 p_adjust = p.adjust(p_w,method = 'BH')
 data_out = data.frame('FC'=FC,'P-value'=p_w,'P-adjust'=p_adjust)
-write.csv(data_out,'E:/r work/2019 cov wan/data/RÓïÑÔ ·å¶ÔÆë¹ıÂËºóÊı¾İ/0-1000 new/0-1000 new detected peaks fill gap adjust p extract abnormal.CSV')
+write.csv(data_out,'E:/r work/2019 cov wan/data/Rè¯­è¨€ å³°å¯¹é½è¿‡æ»¤åæ•°æ®/0-1000 new/0-1000 new detected peaks fill gap adjust p extract abnormal.CSV')
 
 
